@@ -1,0 +1,20 @@
+# -*- coding: utf-8 -*-
+$:.unshift("/Library/RubyMotion/lib")
+require 'motion/project/template/ios'
+require 'yaml'
+require 'bundler'
+
+if ARGV.join(' ') =~ /spec/
+  Bundler.require(:default, :development)
+else
+  Bundler.require
+end
+
+pixate_setting = YAML.load(open('./pixate_license.yaml').read)
+Motion::Project::App.setup do |app|
+  # Use `rake config')' to see complete project settings.
+  app.name = <%= name %> 
+  app.pixate.user = pixate_setting['user']
+  app.pixate.key  = pixate_setting['key']
+  app.pixate.framework = 'vendor/PXEngine.framework'
+end
