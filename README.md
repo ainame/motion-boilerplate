@@ -8,6 +8,7 @@ The collection of my boilerplate to create RubyMotion apps quickly.
 ```bash
 $ git clone git@github.com:ainame/motion-boilerplate.git \
     ~/Library/RubyMotion/template
+$ motion create --template=promotion-with-pixate APP_NAME
 ```
 
 ## templates
